@@ -1,0 +1,18 @@
+enum Permission {
+  ADMIN
+  USER
+}
+
+type User {
+  id: ID! @unique
+  firstName: String!
+  lastName: String!
+  birthday: DateTime!
+  email: String! @unique
+  displayImg: String
+  createdAt: DateTime!
+  verified: Boolean!
+  bio: String
+  password: String!
+  permissions: [Permission]
+}

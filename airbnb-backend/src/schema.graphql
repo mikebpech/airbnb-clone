@@ -1,0 +1,42 @@
+# import * from './generated/prisma.graphql'
+
+type User {
+  id: ID!
+  firstName: String!
+  lastName: String!
+  birthday: DateTime!
+  email: String!
+  displayImg: String
+  createdAt: DateTime!
+  verified: Boolean!
+  bio: String
+  password: String!
+  permissions: [Permission]
+}
+
+type SuccessMessage {
+  message: String
+}
+
+type Query {
+  user(where: UserWhereUniqueInput!): User
+  users(
+    where: UserWhereInput
+    orderBy: UserOrderByInput
+    skip: Int
+    first: Int
+  ): [User]!
+  me: User
+}
+
+type Mutation {
+  signup(
+    email: String!
+    password: String!
+    firstName: String!
+    lastName: String!
+    birthday: DateTime!
+  ): User!
+  signin(email: String!, password: String!): User!
+  signout: SuccessMessage
+}
