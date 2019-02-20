@@ -9,6 +9,8 @@ const HeaderWrapper = styled.header`
   background: #fff;
   align-items: center;
   border-bottom: 1px solid rgb(228, 228, 228);
+  position: fixed;
+  width: 100vw;
 
   .logo {
     cursor: pointer;

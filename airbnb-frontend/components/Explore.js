@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const ExploreContainer = styled.div`
+  margin-top: 100px;
   h1 {
     font-size: 2.5rem;
     font-weight: 600;
